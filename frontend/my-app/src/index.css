@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom color palette 
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+*/
+:root {
+  --turquoise-400: #40e0d0;
+  --amber-500: #ffbf00;
+  --turquoise-600: #36bfbf;
+  --amber-300: #ffc040;
+}
+
+/* Dark mode styling */
+.dark {
+  --bg-gradient-from: #1f2937;
+  --bg-gradient-to: #111827;
+}
+
+/* Text styling fix for light mode */
+.light-mode-text {
+  color: black;
+}
+
+/* Text styling for dark mode */
+.dark-mode-text {
+  color: white;
+}
+

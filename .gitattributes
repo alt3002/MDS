@@ -1,0 +1,2 @@
+backend/model/malware_detection_model.pkl filter=lfs diff=lfs merge=lfs -text
+backend/dataset/ember/test_ember_2018_v2_features.parquet filter=lfs diff=lfs merge=lfs -text
