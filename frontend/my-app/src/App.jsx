@@ -7,7 +7,7 @@ function App() {
   const [showInfo, setShowInfo] = useState(false);
   const [result, setResult] = useState('');
   const [uploadError, setUploadError] = useState('');
-  
+
   // Ensure dark mode is set as default on initial load
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -32,12 +32,13 @@ function App() {
       return;
     }
     console.log("Uploading file:", selectedFile);
-  
+
     const formData = new FormData();
     formData.append('file', selectedFile);
-  
+
     try {
-      const response = await fetch('http://127.0.0.1:5000/scan', {
+      // ✅ MODIFIED: Use environment variable instead of hardcoded localhost
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/scan`, {
         method: 'POST',
         body: formData,
       });
@@ -62,7 +63,7 @@ function App() {
     <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-500 ${isDarkMode 
       ? "bg-gradient-to-br from-gray-800 to-gray-900" 
       : "bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100"}`}>
-      
+
       <div className="w-full max-w-md px-4 py-6">
         {/* Options Bar */}
         <div className="flex items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg mb-6">
