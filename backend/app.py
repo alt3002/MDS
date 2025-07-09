@@ -84,7 +84,8 @@ def scan_file():
     file.save(file_path)
 
     # [MODIFIED] Use predictor logic
-    result = predict_file(file_path)
+    result = predict_file(file_path, model, scaler)
+
 
     # [REMOVED] Old manual logic, kept for reference
     # features = extract_features(file_path)
